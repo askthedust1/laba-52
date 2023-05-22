@@ -44,18 +44,11 @@ class PokerHand {
     }
 
     twoPairs(ranksMap: string[]): boolean {
-        let pairCount = 0;
 
-        for (let i = 0; i < ranksMap.length; i++) {
-            for (let j = i + 1; j < ranksMap.length; j++) {
-                if (ranksMap[i] === ranksMap[j]) {
-                    pairCount++;
-                    if (pairCount === 2) {
-                        return true;
-                    }
-                    break;
-                }
-            }
+        const duplicates = ranksMap.filter((item, index) => index !== ranksMap.indexOf(item));
+
+        if (duplicates.length === 2) {
+            return true;
         }
 
         return false;
@@ -72,7 +65,7 @@ class PokerHand {
                 }
             }
 
-            if (count >= 3) {
+            if (count === 3) {
                 return true;
             }
         }
