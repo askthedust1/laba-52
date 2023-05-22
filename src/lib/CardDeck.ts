@@ -13,7 +13,7 @@ class CardDeck {
     constructor() {
         this.suits.forEach(suit => {
             this.ranks.forEach(rank => {
-                const card = new Card(rank, suit.suit);
+                const card = new Card(rank, suit.suit, suit.pic);
                 this.deck.push(card);
             });
         });

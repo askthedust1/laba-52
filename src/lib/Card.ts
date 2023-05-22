@@ -1,5 +1,5 @@
 class Card {
-    constructor(public rank: string, public suit: string) {
+    constructor(public rank: string, public suit: string, public pic: string ) {
     }
 }
 
